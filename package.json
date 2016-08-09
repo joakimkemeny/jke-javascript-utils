@@ -1,0 +1,57 @@
+{
+	"name": "jke-javascript-utils",
+	"version": "0.1.0",
+	"description": "My collection of JavaScript utilities",
+	"keywords": [
+		"utils",
+		"utilities"
+	],
+	"homepage": "https://github.com/joakimkemeny/jke-javascript-utils#readme",
+	"bugs": {
+		"url": "https://github.com/joakimkemeny/jke-javascript-utils/issues"
+	},
+	"license": "Apache-2.0",
+	"author": "Joakim Kemeny",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/joakimkemeny/jke-javascript-utils.git"
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"test": "npm run test:unit && npm run lint",
+		"test:unit": "mocha --compilers js:babel-register $(find src -path '*.test.js*')"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"babel-preset-es2015": "^6.13.2",
+		"babel-register": "^6.11.6",
+		"chai": "^3.5.0",
+		"eslint": "~3.2.0",
+		"eslint-config-jke": "~0.6.0",
+		"eslint-plugin-import": "~1.12.0",
+		"eslint-plugin-mocha": "~4.3.0",
+		"mocha": "^3.0.2"
+	},
+	"engines": {
+		"node": ">=4.4.7"
+	},
+	"babel": {
+		"presets": [
+			"es2015"
+		]
+	},
+	"eslintConfig": {
+		"extends": [
+			"jke/browser",
+			"jke/mocha",
+			"jke/import"
+		],
+		"env": {
+			"node": true,
+			"mocha": true
+		},
+		"rules": {
+			"import/prefer-default-export": "off"
+		}
+	}
+}
