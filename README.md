@@ -46,12 +46,12 @@ Unless required by applicable law or agreed to in writing, software distributed 
 This project relies on the work of great people who have created the following dependencies.
 
 ### Dependencies
-[![dependency status](https://img.shields.io/david/joakimkemeny/react-components-jke/master.svg)](https://david-dm.org/joakimkemeny/react-components-jke/master#info=dependencies)
+[![dependency status](https://img.shields.io/david/joakimkemeny/jke-javascript-utils/master.svg)](https://david-dm.org/joakimkemeny/jke-javascript-utils/master#info=dependencies)
 
 No dependencies
 
 ### Development dependencies
-[![devDependency status](https://img.shields.io/david/dev/joakimkemeny/react-components-jke/master.svg)](https://david-dm.org/joakimkemeny/react-components-jke/master#info=devDependencies)
+[![devDependency status](https://img.shields.io/david/dev/joakimkemeny/jke-javascript-utils/master.svg)](https://david-dm.org/joakimkemeny/jke-javascript-utils/master#info=devDependencies)
 
 - [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015): Used to configure Babel to understand ES2015
 - [babel-register](https://www.npmjs.com/package/babel-register): Used by Mocha to use Babel to understand ES2015
