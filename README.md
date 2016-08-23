@@ -27,7 +27,7 @@ date.truncateDateToDay(new Date())
 
 ## Available utilities
 
-The following utilites are available.
+The following utilities are available.
 
 - Date: `jke-javascript-utils/date`
 
