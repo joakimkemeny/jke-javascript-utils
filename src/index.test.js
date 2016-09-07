@@ -1,11 +1,11 @@
 import { expect } from "chai"
-import { date } from "./index"
+import { DateUtils } from "./index"
 
 describe("index", () => {
 
 	it("should export date correctly", () => {
-		expect(date).not.to.equal(null)
-		expect(date.truncateDateToDay).not.to.equal(null)
-		expect(typeof date.truncateDateToDay).to.equal("function")
+		expect(DateUtils).not.to.equal(null)
+		expect(DateUtils.truncateDateToDay).not.to.equal(null)
+		expect(typeof DateUtils.truncateDateToDay).to.equal("function")
 	})
 })

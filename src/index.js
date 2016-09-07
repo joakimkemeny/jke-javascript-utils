@@ -1,3 +1,3 @@
-import * as date from "./date"
+import * as DateUtils from "./date"
 
-export { date }
+export { DateUtils }

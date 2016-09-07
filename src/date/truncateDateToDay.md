@@ -11,16 +11,16 @@ Creates a new date from the specified date but truncates it so all time componen
 
 ## Example
 ``` javascript
-truncateDateToDay(new Date(1276854900000))
+DateUtils.truncateDateToDay(new Date(1276854900000))
 // → Fri Jun 18 2010 00:00:00 GMT+0200 (CEST)
 ```
 
 ``` javascript
-truncateDateToDay()
+DateUtils.truncateDateToDay()
 // → Wed Aug 10 2016 00:00:00 GMT+0200 (CEST)
 ```
 
 ``` javascript
-truncateDateToDay(null)
+DateUtils.truncateDateToDay(null)
 // → null
 ```

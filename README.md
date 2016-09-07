@@ -3,33 +3,34 @@
 
 This project provides a set of JavaScript utilities that I use in my own projects to avoid copy-pasting code. These utilities are mainly added to a public project to make them easier for me to use in my own projects and in other projects that I'm involved in but hopefully they can be useful to other people as well.
 
+Currently this project provides very little value since it only contains one utility. I decided to publish it anyway to provide an easy way for me to add new utilities. The project itself also serves as a good basis for creating a new project with test and build systems in place. 
+
 ## Usage
 
-All utilities are provided as separate files to make them easy to include while still keeping your final bundle as small as possible but there are several different ways to import a utility. 
+The utilities are grouped into sets and to use it just import the set that it belongs to. If you use a module bundler like Webpack or Rollup this project is configured to support tree shaking to minimize your final application further.  
 
-### Alternative 1
-``` javascript
-import truncateDateToDay from "jke-javascript-utils/date/truncateDateToDay"
-truncateDateToDay(new Date())
+``` bash
+npm install --save jke-javascript-utils
 ```
 
-### Alternative 2
 ``` javascript
-import { truncateDateToDay } from "jke-javascript-utils/date"
-truncateDateToDay(new Date())
+import { DateUtils } from "jke-javascript-utils"
+DateUtils.truncateDateToDay(new Date())
 ```
 
-### Alternative 3
-``` javascript
-import { date } from "jke-javascript-utils"
-date.truncateDateToDay(new Date())
+If you want to use this library without using NPM you can include it directly using a script tag thanks to [Unpkg](https://unpkg.com) and its sponsors.
+
+``` html
+<script src="https://unpkg.com/jke-javascript-utils/umd/jke-javascript-utils.min.js">
 ```
+
+
 
 ## Available utilities
 
 The following utilities are available.
 
-- Date: `jke-javascript-utils/date`
+- DateUtils
 
 	- [truncateDateToDay](src/date/truncateDateToDay.md)
 
@@ -53,11 +54,16 @@ No dependencies
 ### Development dependencies
 [![devDependency status](https://img.shields.io/david/dev/joakimkemeny/jke-javascript-utils/master.svg)](https://david-dm.org/joakimkemeny/jke-javascript-utils/master#info=devDependencies)
 
+- [babel-cli](https://www.npmjs.com/package/babel-cli): Used to run Babel from the build
+- [babel-loader](https://www.npmjs.com/package/babel-loader): Used by Webpack to use Babel to understand ES2015
 - [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015): Used to configure Babel to understand ES2015
 - [babel-register](https://www.npmjs.com/package/babel-register): Used by Mocha to use Babel to understand ES2015
 - [chai](https://www.npmjs.com/package/chai): Used by Mocha to make assertions in the tests
+- [cross-env](https://www.npmjs.com/package/cross-env): Used to set environment variables cross platform in the build
 - [eslint](https://www.npmjs.com/package/eslint): Used to make sure the code follows my conventions
 - [eslint-config-jke](https://www.npmjs.com/package/eslint-config-jke): Used to configure ESLint
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import): Used to extend ESLint with rules for import statements
 - [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha): Used to extend ESLint with rules for Mocha
 - [mocha](https://www.npmjs.com/package/mocha): Used to test the code
+- [rimraf](https://www.npmjs.com/package/rimraf): Used to remove directories cross platform in the build
+- [webpack](https://www.npmjs.com/package/webpack): Used to create UMD builds

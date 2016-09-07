@@ -11,34 +11,73 @@
 		"url": "https://github.com/joakimkemeny/jke-javascript-utils/issues"
 	},
 	"license": "Apache-2.0",
+	"files": [
+		"es",
+		"lib",
+		"umd"
+	],
+	"main": "lib/index.js",
+	"module": "es/index.js",
+	"jsnext:main": "es/index.js",
 	"author": "Joakim Kemeny",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/joakimkemeny/jke-javascript-utils.git"
 	},
 	"scripts": {
+		"build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
+		"build:commonjs": "rimraf lib && cross-env BABEL_ENV=commonjs babel ./src -d lib --ignore test.js --no-comments",
+		"build:es": "rimraf es && cross-env BABEL_ENV=es babel ./src -d es --ignore test.js --no-comments",
+		"build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js umd/jke-javascript-utils.js",
+		"build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js umd/jke-javascript-utils.min.js",
+		"clean": "rimraf es lib umd",
 		"lint": "eslint .",
+		"prepublish": "npm run clean && npm run build",
 		"test": "npm run test:unit && npm run lint",
-		"test:unit": "mocha --compilers js:babel-register $(find src -path '*.test.js*')"
+		"test:unit": "mocha --compilers js:babel-register --recursive 'src/**/*.test.js'"
 	},
 	"dependencies": {},
 	"devDependencies": {
+		"babel-cli": "^6.11.4",
+		"babel-loader": "^6.2.5",
 		"babel-preset-es2015": "^6.13.2",
 		"babel-register": "^6.11.6",
 		"chai": "^3.5.0",
+		"cross-env": "^2.0.0",
 		"eslint": "~3.3.1",
 		"eslint-config-jke": "~0.8.0",
 		"eslint-plugin-import": "~1.14.0",
 		"eslint-plugin-mocha": "~4.3.0",
-		"mocha": "^3.0.2"
+		"mocha": "^3.0.2",
+		"rimraf": "^2.5.4",
+		"webpack": "^1.13.2"
 	},
 	"engines": {
 		"node": ">=4.5.0"
 	},
 	"babel": {
-		"presets": [
-			"es2015"
-		]
+		"env": {
+			"commonjs": {
+				"presets": [
+					"es2015"
+				]
+			},
+			"development": {
+				"presets": [
+					"es2015"
+				]
+			},
+			"es": {
+				"presets": [
+					[
+						"es2015",
+						{
+							"modules": false
+						}
+					]
+				]
+			}
+		}
 	},
 	"eslintConfig": {
 		"extends": [
@@ -49,6 +88,14 @@
 		"env": {
 			"node": true,
 			"mocha": true
+		},
+		"rules": {
+			"camelcase": [
+				"error",
+				{
+					"properties": "never"
+				}
+			]
 		}
 	}
 }
