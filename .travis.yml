@@ -12,3 +12,4 @@ deploy:
     tags: true
     repo: joakimkemeny/jke-javascript-utils
     branch: master
+    node: '4.5.0'
