@@ -24,8 +24,6 @@ If you want to use this library without using NPM you can include it directly us
 <script src="https://unpkg.com/jke-javascript-utils/umd/jke-javascript-utils.min.js">
 ```
 
-
-
 ## Available utilities
 
 The following utilities are available.

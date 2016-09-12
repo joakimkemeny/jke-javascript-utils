@@ -38,16 +38,16 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"babel-cli": "^6.11.4",
+		"babel-cli": "^6.14.0",
 		"babel-loader": "^6.2.5",
-		"babel-preset-es2015": "^6.13.2",
-		"babel-register": "^6.11.6",
+		"babel-preset-es2015": "^6.14.0",
+		"babel-register": "^6.14.0",
 		"chai": "^3.5.0",
-		"cross-env": "^2.0.0",
-		"eslint": "~3.3.1",
-		"eslint-config-jke": "~0.8.0",
+		"cross-env": "^2.0.1",
+		"eslint": "~3.5.0",
+		"eslint-config-jke": "~0.9.0",
 		"eslint-plugin-import": "~1.14.0",
-		"eslint-plugin-mocha": "~4.3.0",
+		"eslint-plugin-mocha": "~4.5.1",
 		"mocha": "^3.0.2",
 		"rimraf": "^2.5.4",
 		"webpack": "^1.13.2"
@@ -88,14 +88,6 @@
 		"env": {
 			"node": true,
 			"mocha": true
-		},
-		"rules": {
-			"camelcase": [
-				"error",
-				{
-					"properties": "never"
-				}
-			]
 		}
 	}
 }
