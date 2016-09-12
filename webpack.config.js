@@ -12,7 +12,7 @@ const config = {
 		]
 	},
 	output: {
-		library: "jke-javascript-utils",
+		library: "JkeJavaScriptUtils",
 		libraryTarget: "umd"
 	},
 	plugins: [

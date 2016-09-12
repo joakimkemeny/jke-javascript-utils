@@ -22,6 +22,10 @@ If you want to use this library without using NPM you can include it directly us
 
 ``` html
 <script src="https://unpkg.com/jke-javascript-utils/umd/jke-javascript-utils.min.js">
+<script>
+   var DateUtils = JkeJavaScriptUtils.DateUtils
+   DateUtils.truncateDateToDay(new Date())
+</script>
 ```
 
 ## Available utilities
