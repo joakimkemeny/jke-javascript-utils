@@ -57,6 +57,7 @@ No dependencies
 [![devDependency status](https://img.shields.io/david/dev/joakimkemeny/jke-javascript-utils/master.svg)](https://david-dm.org/joakimkemeny/jke-javascript-utils/master#info=devDependencies)
 
 - [babel-cli](https://www.npmjs.com/package/babel-cli): Used to run Babel from the build
+- [babel-core](https://www.npmjs.com/package/babel-core): Used by all Babel dependencies to do the actual compilation
 - [babel-loader](https://www.npmjs.com/package/babel-loader): Used by Webpack to use Babel to understand ES2015
 - [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015): Used to configure Babel to understand ES2015
 - [babel-register](https://www.npmjs.com/package/babel-register): Used by Mocha to use Babel to understand ES2015
