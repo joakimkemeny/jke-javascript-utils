@@ -1,6 +1,6 @@
 {
 	"name": "jke-javascript-utils",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "My collection of JavaScript utilities",
 	"keywords": [
 		"utils",
@@ -38,23 +38,23 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"babel-cli": "^6.14.0",
-		"babel-core": "^6.14.0",
-		"babel-loader": "^6.2.5",
-		"babel-preset-es2015": "^6.14.0",
-		"babel-register": "^6.14.0",
+		"babel-cli": "^6.18.0",
+		"babel-core": "^6.18.0",
+		"babel-loader": "^6.2.7",
+		"babel-preset-es2015": "^6.18.0",
+		"babel-register": "^6.18.0",
 		"chai": "^3.5.0",
-		"cross-env": "^2.0.1",
-		"eslint": "~3.5.0",
-		"eslint-config-jke": "~0.9.0",
-		"eslint-plugin-import": "~1.14.0",
-		"eslint-plugin-mocha": "~4.5.1",
-		"mocha": "^3.0.2",
+		"cross-env": "^3.1.3",
+		"eslint": "~3.9.1",
+		"eslint-config-jke": "~0.10.1",
+		"eslint-plugin-import": "~2.1.0",
+		"eslint-plugin-mocha": "~4.7.0",
+		"mocha": "^3.1.2",
 		"rimraf": "^2.5.4",
-		"webpack": "^1.13.2"
+		"webpack": "^1.13.3"
 	},
 	"engines": {
-		"node": ">=4.5.0"
+		"node": ">=6.9.1"
 	},
 	"babel": {
 		"env": {
@@ -83,12 +83,12 @@
 	"eslintConfig": {
 		"extends": [
 			"jke/browser",
-			"jke/mocha",
-			"jke/import"
+			"jke/import",
+			"jke/mocha"
 		],
 		"env": {
-			"node": true,
-			"mocha": true
+			"mocha": true,
+			"node": true
 		}
 	}
 }

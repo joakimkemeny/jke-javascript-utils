@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-  - 6
-  - 5
-  - 4.5.0
+  - 7
+  - 6.9.1
 deploy:
   provider: npm
   email: joakim@kemeny.se
@@ -12,4 +11,4 @@ deploy:
     tags: true
     repo: joakimkemeny/jke-javascript-utils
     branch: master
-    node: '4.5.0'
+    node: '6.9.1'
