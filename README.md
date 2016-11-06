@@ -59,6 +59,7 @@ No dependencies
 - [babel-cli](https://www.npmjs.com/package/babel-cli): Used to run Babel from the build
 - [babel-core](https://www.npmjs.com/package/babel-core): Used by all Babel dependencies to do the actual compilation
 - [babel-loader](https://www.npmjs.com/package/babel-loader): Used by Webpack to use Babel to understand ES2015
+- [babel-plugin-istanbul](https://www.npmjs.com/package/babel-plugin-istanbul): Used to configure Istanbul to use Babel for coverage
 - [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015): Used to configure Babel to understand ES2015
 - [babel-register](https://www.npmjs.com/package/babel-register): Used by Mocha to use Babel to understand ES2015
 - [chai](https://www.npmjs.com/package/chai): Used by Mocha to make assertions in the tests
@@ -68,5 +69,6 @@ No dependencies
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import): Used to extend ESLint with rules for import statements
 - [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha): Used to extend ESLint with rules for Mocha
 - [mocha](https://www.npmjs.com/package/mocha): Used to test the code
+- [nyc](https://www.npmjs.com/package/nyc): Used to check test coverage
 - [rimraf](https://www.npmjs.com/package/rimraf): Used to remove directories cross platform in the build
 - [webpack](https://www.npmjs.com/package/webpack): Used to create UMD builds

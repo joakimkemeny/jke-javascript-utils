@@ -30,17 +30,18 @@
 		"build:es": "rimraf es && cross-env BABEL_ENV=es babel ./src -d es --ignore test.js --no-comments",
 		"build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js umd/jke-javascript-utils.js",
 		"build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js umd/jke-javascript-utils.min.js",
-		"clean": "rimraf es lib umd",
+		"clean": "rimraf .nyc_output coverage es lib umd",
 		"lint": "eslint .",
 		"prepublish": "npm run clean && npm run build",
 		"test": "npm run test:unit && npm run lint",
-		"test:unit": "mocha --compilers js:babel-register --recursive 'src/**/*.test.js'"
+		"test:unit": "cross-env BABEL_ENV=test nyc --all mocha --compilers js:babel-register --recursive 'src/**/*.test.js'"
 	},
 	"dependencies": {},
 	"devDependencies": {
 		"babel-cli": "^6.18.0",
 		"babel-core": "^6.18.0",
 		"babel-loader": "^6.2.7",
+		"babel-plugin-istanbul": "^2.0.3",
 		"babel-preset-es2015": "^6.18.0",
 		"babel-register": "^6.18.0",
 		"chai": "^3.5.0",
@@ -50,6 +51,7 @@
 		"eslint-plugin-import": "~2.1.0",
 		"eslint-plugin-mocha": "~4.7.0",
 		"mocha": "^3.1.2",
+		"nyc": "^8.4.0",
 		"rimraf": "^2.5.4",
 		"webpack": "^1.13.3"
 	},
@@ -77,6 +79,14 @@
 						}
 					]
 				]
+			},
+			"test": {
+				"presets": [
+					"es2015"
+				],
+				"plugins": [
+					"istanbul"
+				]
 			}
 		}
 	},
@@ -90,5 +100,19 @@
 			"mocha": true,
 			"node": true
 		}
+	},
+	"nyc": {
+		"include": [
+			"src"
+		],
+		"instrument": false,
+		"reporter": [
+			"html",
+			"text-summary"
+		],
+		"require": [
+			"babel-register"
+		],
+		"sourceMap": false
 	}
 }
