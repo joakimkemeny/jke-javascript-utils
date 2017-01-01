@@ -37,7 +37,7 @@ The following utilities are available.
 	- [truncateDateToDay](src/date/truncateDateToDay.md)
 
 ## License
-Copyright 2016 Joakim Kemeny
+Copyright 2016-2017 Joakim Kemeny
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
