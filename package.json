@@ -30,62 +30,57 @@
 		"build:es": "rimraf es && cross-env BABEL_ENV=es babel ./src -d es --ignore test.js --no-comments",
 		"build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js umd/jke-javascript-utils.js",
 		"build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js umd/jke-javascript-utils.min.js",
-		"clean": "rimraf .nyc_output coverage es lib umd",
+		"clean": "rimraf coverage es lib umd",
 		"lint": "eslint .",
 		"prepublish": "npm run clean && npm run build",
 		"test": "npm run test:unit && npm run lint",
-		"test:unit": "cross-env BABEL_ENV=test nyc --all mocha --compilers js:babel-register --recursive 'src/**/*.test.js'"
+		"test:unit": "jest --coverage"
 	},
-	"dependencies": {},
 	"devDependencies": {
-		"babel-cli": "^6.18.0",
-		"babel-core": "^6.18.0",
-		"babel-loader": "^6.2.7",
-		"babel-plugin-istanbul": "^2.0.3",
-		"babel-preset-es2015": "^6.18.0",
-		"babel-register": "^6.18.0",
-		"chai": "^3.5.0",
-		"cross-env": "^3.1.3",
-		"eslint": "~3.9.1",
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.24.1",
+		"babel-loader": "^6.4.1",
+		"babel-preset-latest": "^6.24.1",
+		"cross-env": "^4.0.0",
+		"eslint": "~3.19.0",
 		"eslint-config-jke": "~0.10.1",
-		"eslint-plugin-import": "~2.1.0",
-		"eslint-plugin-mocha": "~4.7.0",
-		"mocha": "^3.1.2",
-		"nyc": "^8.4.0",
-		"rimraf": "^2.5.4",
-		"webpack": "^1.13.3"
+		"eslint-plugin-import": "~2.2.0",
+		"eslint-plugin-jest": "~19.0.1",
+		"jest": "^19.0.2",
+		"rimraf": "^2.6.1",
+		"uglifyjs-webpack-plugin": "^0.4.3",
+		"webpack": "^2.4.1"
 	},
 	"engines": {
-		"node": ">=6.9.1"
+		"node": ">=6.10.0"
 	},
 	"babel": {
 		"env": {
 			"commonjs": {
 				"presets": [
-					"es2015"
+					"latest"
 				]
 			},
 			"development": {
 				"presets": [
-					"es2015"
+					"latest"
 				]
 			},
 			"es": {
 				"presets": [
 					[
-						"es2015",
+						"latest",
 						{
-							"modules": false
+							"es2015": {
+								"modules": false
+							}
 						}
 					]
 				]
 			},
 			"test": {
 				"presets": [
-					"es2015"
-				],
-				"plugins": [
-					"istanbul"
+					"latest"
 				]
 			}
 		}
@@ -94,25 +89,7 @@
 		"extends": [
 			"jke/browser",
 			"jke/import",
-			"jke/mocha"
-		],
-		"env": {
-			"mocha": true,
-			"node": true
-		}
-	},
-	"nyc": {
-		"include": [
-			"src"
-		],
-		"instrument": false,
-		"reporter": [
-			"html",
-			"text-summary"
-		],
-		"require": [
-			"babel-register"
-		],
-		"sourceMap": false
+			"jke/jest"
+		]
 	}
 }

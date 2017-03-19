@@ -1,10 +1,10 @@
-import { expect } from "chai"
+/* eslint-env jest */
 import { truncateDateToDay } from "./index"
 
 describe("date", () => {
 
-	it("should export truncateDateToDay correctly", () => {
-		expect(truncateDateToDay).not.to.equal(null)
-		expect(typeof truncateDateToDay).to.equal("function")
+	test("should export truncateDateToDay correctly", () => {
+		expect(truncateDateToDay).not.toEqual(null)
+		expect(typeof truncateDateToDay).toEqual("function")
 	})
 })

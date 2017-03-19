@@ -1,13 +1,15 @@
+/* eslint-env node */
 const webpack = require("webpack")
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin")
 
 const env = process.env.NODE_ENV
 const config = {
 	module: {
-		loaders: [
+		rules: [
 			{
 				exclude: /node_modules/,
-				loaders: ["babel-loader"],
-				test: /\.js$/
+				test: /\.js$/,
+				use: { loader: "babel-loader" }
 			}
 		]
 	},
@@ -16,7 +18,6 @@ const config = {
 		libraryTarget: "umd"
 	},
 	plugins: [
-		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.DefinePlugin({
 			"process.env.NODE_ENV": JSON.stringify(env)
 		})
@@ -24,16 +25,7 @@ const config = {
 }
 
 if (env === "production") {
-	config.plugins.push(
-		new webpack.optimize.UglifyJsPlugin({
-			compressor: {
-				pure_getters: true,
-				unsafe: true,
-				unsafe_comps: true,
-				warnings: false
-			}
-		})
-	)
+	config.plugins.push(new UglifyJSPlugin())
 }
 
 module.exports = config

@@ -1,5 +1,3 @@
-/* eslint no-magic-numbers: ["error", { "ignore": [0] }] */
-
 const truncateDateToDay = (date = new Date()) => {
 	if (!date || !(date instanceof Date)) {
 		return null

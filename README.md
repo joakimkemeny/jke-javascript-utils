@@ -6,7 +6,6 @@ This project provides a set of JavaScript utilities that I use in my own project
 Currently this project provides very little value since it only contains one utility. I decided to publish it anyway to provide an easy way for me to add new utilities. The project itself also serves as a good basis for creating a new project with test and build systems in place. 
 
 ## Usage
-
 The utilities are grouped into sets and to use it just import the set that it belongs to. If you use a module bundler like Webpack or Rollup this project is configured to support tree shaking to minimize your final application further.  
 
 ``` bash
@@ -58,17 +57,14 @@ No dependencies
 
 - [babel-cli](https://www.npmjs.com/package/babel-cli): Used to run Babel from the build
 - [babel-core](https://www.npmjs.com/package/babel-core): Used by all Babel dependencies to do the actual compilation
-- [babel-loader](https://www.npmjs.com/package/babel-loader): Used by Webpack to use Babel to understand ES2015
-- [babel-plugin-istanbul](https://www.npmjs.com/package/babel-plugin-istanbul): Used to configure Istanbul to use Babel for coverage
-- [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015): Used to configure Babel to understand ES2015
-- [babel-register](https://www.npmjs.com/package/babel-register): Used by Mocha to use Babel to understand ES2015
-- [chai](https://www.npmjs.com/package/chai): Used by Mocha to make assertions in the tests
+- [babel-loader](https://www.npmjs.com/package/babel-loader): Used by Webpack to use Babel to understand ES2017
+- [babel-preset-latest](https://www.npmjs.com/package/babel-preset-latest): Used to configure Babel to understand ES2017
 - [cross-env](https://www.npmjs.com/package/cross-env): Used to set environment variables cross platform in the build
 - [eslint](https://www.npmjs.com/package/eslint): Used to make sure the code follows my conventions
 - [eslint-config-jke](https://www.npmjs.com/package/eslint-config-jke): Used to configure ESLint
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import): Used to extend ESLint with rules for import statements
-- [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha): Used to extend ESLint with rules for Mocha
-- [mocha](https://www.npmjs.com/package/mocha): Used to test the code
-- [nyc](https://www.npmjs.com/package/nyc): Used to check test coverage
+- [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest): Used to extend ESLint with rules for Jest
+- [jest](https://www.npmjs.com/package/jest): Used to test the code
 - [rimraf](https://www.npmjs.com/package/rimraf): Used to remove directories cross platform in the build
+- [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin): Used to minimize the build
 - [webpack](https://www.npmjs.com/package/webpack): Used to create UMD builds

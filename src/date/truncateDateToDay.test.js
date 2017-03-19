@@ -1,42 +1,40 @@
-/* eslint no-magic-numbers: ["error", { "ignore": [0] }] */
-
-import { expect } from "chai"
+/* eslint-env jest */
 import truncateDateToDay from "./truncateDateToDay"
 
 describe("date/truncateDateToDay", () => {
 
-	it("should return null for null", () => {
+	test("should return null for null", () => {
 		const expected = null
 		const actual = truncateDateToDay(null)
 
-		expect(actual).to.equal(expected)
+		expect(actual).toEqual(expected)
 	})
 
-	it("should return null for non dates", () => {
+	test("should return null for non dates", () => {
 		const expected = null
 		const actual = truncateDateToDay("hello")
 
-		expect(actual).to.equal(expected)
+		expect(actual).toEqual(expected)
 	})
 
-	it("should return a correct date", () => {
+	test("should return a correct date", () => {
 		const now = new Date()
 		const actual = truncateDateToDay(now)
 
-		expect(actual).not.to.equal(null)
-		expect(actual.getFullYear()).to.equal(now.getFullYear())
-		expect(actual.getMonth()).to.equal(now.getMonth())
-		expect(actual.getDate()).to.equal(now.getDate())
-		expect(actual.getMinutes()).to.equal(0)
-		expect(actual.getSeconds()).to.equal(0)
-		expect(actual.getMilliseconds()).to.equal(0)
+		expect(actual).not.toEqual(null)
+		expect(actual.getFullYear()).toEqual(now.getFullYear())
+		expect(actual.getMonth()).toEqual(now.getMonth())
+		expect(actual.getDate()).toEqual(now.getDate())
+		expect(actual.getMinutes()).toEqual(0)
+		expect(actual.getSeconds()).toEqual(0)
+		expect(actual.getMilliseconds()).toEqual(0)
 	})
 
-	it("should return today for undefined", () => {
+	test("should return today for undefined", () => {
 		const now = new Date()
 		const expected = truncateDateToDay(now)
 		const actual = truncateDateToDay()
 
-		expect(actual).not.to.equal(expected)
+		expect(actual).toEqual(expected)
 	})
 })

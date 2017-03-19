@@ -1,11 +1,11 @@
-import { expect } from "chai"
+/* eslint-env jest */
 import { DateUtils } from "./index"
 
 describe("index", () => {
 
-	it("should export date correctly", () => {
-		expect(DateUtils).not.to.equal(null)
-		expect(DateUtils.truncateDateToDay).not.to.equal(null)
-		expect(typeof DateUtils.truncateDateToDay).to.equal("function")
+	test("should export date correctly", () => {
+		expect(DateUtils).not.toEqual(null)
+		expect(DateUtils.truncateDateToDay).not.toEqual(null)
+		expect(typeof DateUtils.truncateDateToDay).toEqual("function")
 	})
 })
