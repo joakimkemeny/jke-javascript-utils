@@ -1,3 +1,7 @@
+### _This repository is deprecated and archived_
+
+---
+
 # jke-javascript-utils 
 [![NPM version](https://img.shields.io/npm/v/jke-javascript-utils.svg)](https://www.npmjs.com/package/jke-javascript-utils) [![Build status](https://img.shields.io/travis/joakimkemeny/jke-javascript-utils/master.svg)](https://travis-ci.org/joakimkemeny/jke-javascript-utils)
 
